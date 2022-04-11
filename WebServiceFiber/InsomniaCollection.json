@@ -1,0 +1,136 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2022-04-11T14:23:36.598Z",
+  "__export_source": "insomnia.desktop.app:v2022.2.1",
+  "resources": [
+    {
+      "_id": "req_6a7675d2e39b4cada9480bea299c8fe9",
+      "parentId": "wrk_186504b5575040b7920b6750262e3d42",
+      "modified": 1649686941789,
+      "created": 1649686666737,
+      "url": "localhost:3000/album",
+      "name": "postAlbums",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"id\": \"4\",\n\t\"title\": \"The Modern Sound of Betty Carter\",\n\t\"artist\": \"Betty Carter\",\n\t\"price\": 49.99\n}\n"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_dec199d7bb454e118086f9a2c3b6a710"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1649686666737,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "wrk_186504b5575040b7920b6750262e3d42",
+      "parentId": null,
+      "modified": 1647285368219,
+      "created": 1647285368219,
+      "name": "New Document",
+      "description": "",
+      "scope": "design",
+      "_type": "workspace"
+    },
+    {
+      "_id": "req_2c89896cd4514283ab3614feaf9b8a34",
+      "parentId": "wrk_186504b5575040b7920b6750262e3d42",
+      "modified": 1649686710801,
+      "created": 1649686645862,
+      "url": "localhost:3000/album/4",
+      "name": "getAlbumByID",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1649686645862,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_b1d04867cef448698614d6a0cb5fac0d",
+      "parentId": "wrk_186504b5575040b7920b6750262e3d42",
+      "modified": 1649686620202,
+      "created": 1647285368252,
+      "url": "localhost:3000/albums",
+      "name": "GetAlbums",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1647285368252,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "env_f3c4b43e378290262619f354f63cab49086b898c",
+      "parentId": "wrk_186504b5575040b7920b6750262e3d42",
+      "modified": 1647285368242,
+      "created": 1647285368242,
+      "name": "Base Environment",
+      "data": {},
+      "dataPropertyOrder": null,
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1647285368242,
+      "_type": "environment"
+    },
+    {
+      "_id": "jar_f3c4b43e378290262619f354f63cab49086b898c",
+      "parentId": "wrk_186504b5575040b7920b6750262e3d42",
+      "modified": 1647285368247,
+      "created": 1647285368247,
+      "name": "Default Jar",
+      "cookies": [],
+      "_type": "cookie_jar"
+    },
+    {
+      "_id": "spc_86788811088549a3ba82fd1cff90547c",
+      "parentId": "wrk_186504b5575040b7920b6750262e3d42",
+      "modified": 1649686570023,
+      "created": 1647285368235,
+      "fileName": "TutorialGO",
+      "contents": "",
+      "contentType": "yaml",
+      "_type": "api_spec"
+    },
+    {
+      "_id": "uts_1b7ba3541c50487ba4e39372eefd80c9",
+      "parentId": "wrk_186504b5575040b7920b6750262e3d42",
+      "modified": 1647285368254,
+      "created": 1647285368254,
+      "name": "Example Test Suite",
+      "_type": "unit_test_suite"
+    }
+  ]
+}
