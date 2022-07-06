@@ -13,6 +13,7 @@ import (
 func main() {
 	csvFilename := flag.String("csv", "problems.csv", "a csv file in the format of 'question,answer'")
 	shuffle := flag.Bool("s", false, "shuffle the quiz order each time it is run")
+	timeLimit := flag.Int("limit", 10, "the time limit for the answer in seconds")
 	flag.Parse()
 
 	file, err := os.Open(*csvFilename)
@@ -27,16 +28,28 @@ func main() {
 	}
 
 	problems := parseLines(lines, *shuffle)
+
+	timer := time.NewTimer(time.Duration(*timeLimit) * time.Second)
 	correct := 0
+
+problemloop:
 	for i, problem := range problems {
 		fmt.Printf("Problem #%d: %s = ", i+1, problem.question)
-		var answer string
-		fmt.Scanf("%s\n", &answer)
-		if answer != problem.answer {
-			fmt.Println("You gave the wrong answer.")
-		} else {
-			correct++
-			fmt.Println("Correct!")
+		answerChannel := make(chan string)
+		go func() {
+			var answer string
+			fmt.Scanf("%s\n", &answer)
+			answerChannel <- answer
+		}()
+
+		select {
+		case <-timer.C:
+			fmt.Println()
+			break problemloop
+		case answer := <-answerChannel:
+			if answer == problem.answer {
+				correct++
+			}
 		}
 	}
 
