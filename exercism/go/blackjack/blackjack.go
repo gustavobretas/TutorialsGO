@@ -26,27 +26,34 @@ func ParseCard(card string) int {
 // FirstTurn returns the decision for the first turn, given two cards of the
 // player and one card of the dealer.
 func FirstTurn(card1, card2, dealerCard string) string {
+	const (
+		stand = "S"
+		hit   = "H"
+		split = "P"
+		win   = "W"
+	)
+
 	myHand := ParseCard(card1) + ParseCard(card2)
 	switch {
 	case (card1 == "ace" && card2 == "ace"):
-		return "P"
+		return split
 	case myHand == 21:
 		if ParseCard(dealerCard) < 10 {
-			return "W"
+			return win
 		} else {
-			return "S"
+			return stand
 		}
 	case myHand >= 17 && myHand <= 20:
-		return "S"
+		return stand
 	case myHand >= 12 && myHand <= 16:
 		if ParseCard(dealerCard) >= 7 {
-			return "H"
+			return hit
 		} else {
-			return "S"
+			return stand
 		}
 	case myHand <= 11:
-		return "H"
+		return hit
 	default:
-		return "S"
+		return stand
 	}
 }
