@@ -10,6 +10,17 @@ type App struct {
 	ctx context.Context
 }
 
+type Person struct {
+	Name    string   `json:"name"`
+	Age     uint8    `json:"age"`
+	Address *Address `json:"address"`
+}
+
+type Address struct {
+	Street   string `json:"street"`
+	Postcode string `json:"postcode"`
+}
+
 // NewApp creates a new App application struct
 func NewApp() *App {
 	return &App{}
@@ -22,6 +33,10 @@ func (a *App) startup(ctx context.Context) {
 }
 
 // Greet returns a greeting for the given name
-func (a *App) Greet(name string) string {
-	return fmt.Sprintf("Hello %s, It's show time!", name)
+//
+//	func (a *App) Greet(name string) string {
+//		return fmt.Sprintf("Hello %s, It's show time!", name)
+//	}
+func (a *App) Greet(p Person) string {
+	return fmt.Sprintf("Hello %s (Age: %d)!", p.Name, p.Age)
 }
